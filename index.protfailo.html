@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+    --pink:#f3a4c8;      /* زهري بارد */
+    --blue:#9ad6ff;      /* أزرق بارد */
+    --dark:#0f172a;
+    --glass:rgba(255,255,255,0.35);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,var(--pink),var(--blue));
+    color:var(--dark);
+}
+
+/* Glass Effect */
+.glass{
+    background:var(--glass);
+    backdrop-filter:blur(20px);
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Navbar */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    margin:20px;
+    padding:15px 35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    background:linear-gradient(90deg,var(--pink),var(--blue));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#1e293b;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#0284c7;
+}
+
+/* Sections */
+section{
+    min-height:100vh;
+    padding:140px 40px 80px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Home */
+.home-box{
+    text-align:center;
+    padding:70px;
+    max-width:750px;
+}
+
+.home-box h1{
+    font-size:52px;
+    font-weight:700;
+}
+
+.home-box span{
+    background:linear-gradient(90deg,var(--pink),var(--blue));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.home-box p{
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.7;
+}
+
+.home-box button{
+    margin-top:35px;
+    padding:15px 45px;
+    border:none;
+    border-radius:35px;
+    background:linear-gradient(90deg,var(--pink),var(--blue));
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* About */
+.about-box{
+    padding:60px;
+    max-width:800px;
+    text-align:center;
+}
+
+.about-box h2{
+    font-size:36px;
+    margin-bottom:25px;
+}
+
+.about-box p{
+    line-height:1.9;
+    font-size:17px;
+}
+
+/* Projects */
+.projects-container{
+    width:100%;
+    max-width:1000px;
+}
+
+.projects-container h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:36px;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.project{
+    padding:40px 25px;
+    text-align:center;
+    transition:.4s;
+}
+
+.project:hover{
+    transform:translateY(-12px);
+    box-shadow:0 0 40px rgba(154,214,255,0.8);
+}
+
+/* Contact */
+.contact-box{
+    padding:60px;
+    width:100%;
+    max-width:500px;
+}
+
+.contact-box h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+input,textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:14px;
+    background:rgba(255,255,255,0.7);
+}
+
+.send-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,var(--pink),var(--blue));
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+    color:#1e293b;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav class="glass">
+        <div class="logo">Nema Portfolio</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="home-box glass">
+        <h1>Hello, I’m <span>Nema</span></h1>
+        <p>
+            I design modern, elegant, and futuristic web experiences
+            using clean code and soft cold colors.
+        </p>
+        <button onclick="goTo('contact')">Contact Me</button>
+    </div>
+</section>
+
+<section id="about">
+    <div class="about-box glass">
+        <h2>About Me</h2>
+        <p>
+          I'm a beginner web designer and developer, still learning in this field. I'm currently in my first year of university, and I designed this model with the help of artificial intelligence as a way to introduce myself.
+        </p>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="projects-container">
+        <h2>My Projects</h2>
+        <div class="projects">
+            <div class="project glass">Modern Calculator</div>
+            <div class="project glass">Personal Portfolio</div>
+            <div class="project glass">Smart Web App</div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="contact-box glass">
+        <h2>Contact Me</h2>
+        <form onsubmit="sendEmail(event)">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button class="send-btn">Send Email</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2026 • Modern Portfolio Design
+</footer>
+
+<script>
+function goTo(id){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+function sendEmail(e){
+    e.preventDefault();
+    const name=document.getElementById("name").value;
+    const email=document.getElementById("email").value;
+    const message=document.getElementById("message").value;
+
+    const mailtoLink =
+        `mailto:naama847al@gmail.com?subject=Message from ${name}&body=` +
+        `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+
+    window.location.href = mailtoLink;
+}
+</script>
+
+</body>
+</html>
